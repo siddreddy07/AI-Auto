@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "A1AutoBeauty"
+description = "A premium mobile auto detailing website for A1AutoBeauty in Omaha, Nebraska, with cinematic automotive presentation, interactive transformation showcase, quote flow, and Instagram conversion touchpoints."
+version = "1.0.0"
+id = "artifacts/a1autobeauty"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 21528
+
+[services.development]
+run = "pnpm --filter @workspace/a1autobeauty run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/a1autobeauty", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/a1autobeauty/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21528"
+BASE_PATH = "/"

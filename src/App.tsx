@@ -29,9 +29,9 @@ const services = [
 ];
 
 const gallery = [
-  { image: '/assets/finish-detail.jpg', label: 'FINISH / 01', title: 'The light tells the truth', description: 'A ceramic finish is not a filter. It is hours of correction, sealed into every panel.' },
-  { image: '/assets/detailing-action.jpg', label: 'PROCESS / 02', title: 'Patience over pressure', description: 'We work panel by panel, with the restraint and precision your paint deserves.' },
-  { image: '/assets/hero-truck.jpg', label: 'DELIVERY / 03', title: 'Leave with a different car', description: 'Mobile service, shop-level finish. Omaha metro, on your drive and on your time.' },
+  { image: `${import.meta.env.BASE_URL}assets/gallery-ceramic.jpg`, label: 'CERAMIC / 01', title: 'The light tells the truth', description: 'A ceramic finish is not a filter. It is hours of correction, sealed into every panel.' },
+  { image: `${import.meta.env.BASE_URL}assets/gallery-polish.jpg`, label: 'POLISH / 02', title: 'Patience over pressure', description: 'We work panel by panel, with the restraint and precision your paint deserves.' },
+  { image: `${import.meta.env.BASE_URL}assets/gallery-wash.jpg`, label: 'WASH / 03', title: 'Leave with a different car', description: 'Mobile service, shop-level finish. Omaha metro, on your drive and on your time.' },
 ];
 
 function InstagramLink({ className = '' }: { className?: string }) {
@@ -236,6 +236,13 @@ function Story() {
 function Gallery() {
   const [active, setActive] = useState(0);
   const item = gallery[active];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActive((prev) => (prev + 1) % gallery.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [active]);
   return (
     <section className="bg-[#102437] px-5 py-20 text-white sm:px-8 sm:py-28 lg:px-12">
       <div className="mx-auto max-w-[1380px]">

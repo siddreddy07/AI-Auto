@@ -67,7 +67,7 @@ function Header({ onQuote }: { onQuote: () => void }) {
     <header className={`fixed left-0 right-0 top-0 z-40 border-b text-white transition-all duration-300 ${scrolled ? 'border-white/10 bg-[#102437]/95 shadow-lg backdrop-blur-md' : 'border-white/15 bg-[#102437]/15'}`}>
       <div className="mx-auto flex h-[76px] max-w-[1380px] items-center justify-between px-5 sm:px-8 lg:px-12">
         <a href="#top" className="flex items-center gap-3" data-testid="link-logo">
-          <img src="/assets/a1-logo.jpeg" alt="A1 Auto Beauty" className="h-11 w-11 rounded-full object-cover ring-1 ring-white/50" data-testid="img-logo" />
+          <img src={`${import.meta.env.BASE_URL}assets/a1-logo.jpeg`} alt="A1 Auto Beauty" className="h-11 w-11 rounded-full object-cover ring-1 ring-white/50" data-testid="img-logo" />
           <div className="hidden sm:block">
             <div className="font-display text-[21px] font-bold uppercase leading-none tracking-[.08em]">A1AutoBeauty</div>
             <div className="mt-1 font-mono-brand text-[8px] uppercase tracking-[.24em] text-white/60">Mobile detailing / Omaha</div>
@@ -112,7 +112,7 @@ function Header({ onQuote }: { onQuote: () => void }) {
 function Hero({ onQuote }: { onQuote: () => void }) {
   return (
     <section id="top" className="relative flex min-h-[700px] items-end overflow-hidden bg-[#102437] text-white sm:min-h-[780px]">
-      <img src="/assets/hero-truck.jpg" alt="Glossy black Ford F-150 outside a detailing garage" className="hero-image absolute inset-0 h-full w-full object-cover object-center" data-testid="img-hero-truck" />
+      <img src={`${import.meta.env.BASE_URL}assets/hero-truck.jpg`} alt="Glossy black Ford F-150 outside a detailing garage" className="hero-image absolute inset-0 h-full w-full object-cover object-center" data-testid="img-hero-truck" />
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(16,36,55,.96)_0%,rgba(16,36,55,.72)_42%,rgba(16,36,55,.12)_100%)]" />
       <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(16,36,55,.9)_0%,transparent_40%)]" />
       <div className="absolute bottom-7 right-6 hidden items-center gap-3 text-[10px] uppercase tracking-editorial text-white/65 sm:flex">
@@ -194,10 +194,10 @@ function Transformation() {
           <p className="max-w-[500px] text-[15px] leading-7 text-[#536575]">Drag across the King Ranch. This is the same finish before and after a full paint correction and ceramic coating — no color grading, no shortcuts.</p>
         </div>
         <div className="relative mt-14 aspect-[4/3] overflow-hidden bg-[#102437] sm:aspect-[16/8]">
-          <img src="/assets/hero-truck.jpg" alt="Ford F-150 King Ranch after paint correction" className="absolute inset-0 h-full w-full object-cover" data-testid="img-transformation-after" />
+          <img src={`${import.meta.env.BASE_URL}assets/hero-truck.jpg`} alt="Ford F-150 King Ranch after paint correction" className="absolute inset-0 h-full w-full object-cover" data-testid="img-transformation-after" />
           <div className="absolute inset-y-0 left-0 overflow-hidden" style={{ width: `${position}%` }}>
             <div className="relative h-full" style={{ width: `${10000 / position}%` }}>
-              <img src="/assets/king-ranch-before.jpg" alt="Ford F-150 King Ranch before paint correction" className="absolute inset-0 h-full w-full max-w-none object-cover object-center" data-testid="img-transformation-before" />
+              <img src={`${import.meta.env.BASE_URL}assets/king-ranch-before.jpg`} alt="Ford F-150 King Ranch before paint correction" className="absolute inset-0 h-full w-full max-w-none object-cover object-center" data-testid="img-transformation-before" />
             </div>
             <span className="absolute bottom-5 left-5 font-mono-brand text-[10px] font-bold uppercase tracking-[.16em] text-white">Before / oxidation + swirl</span>
           </div>
@@ -216,7 +216,7 @@ function Story() {
     <section id="story" className="bg-[#f0a52b] px-5 py-20 text-[#102437] sm:px-8 sm:py-28 lg:px-12">
       <div className="mx-auto grid max-w-[1380px] gap-14 lg:grid-cols-[1.08fr_.92fr] lg:items-center">
         <div className="relative order-2 aspect-[4/3] overflow-hidden bg-[#102437] lg:order-1">
-          <img src="/assets/detailing-action.jpg" alt="Detailer correcting paint on a pickup hood" className="h-full w-full object-cover grayscale-[.15] mix-blend-normal transition-transform duration-700 hover:scale-105" data-testid="img-story-detailing" />
+          <img src={`${import.meta.env.BASE_URL}assets/detailing-action.jpg`} alt="Detailer correcting paint on a pickup hood" className="h-full w-full object-cover grayscale-[.15] mix-blend-normal transition-transform duration-700 hover:scale-105" data-testid="img-story-detailing" />
           <div className="absolute bottom-5 left-5 bg-[#102437] px-3 py-2 font-mono-brand text-[9px] uppercase tracking-[.15em] text-white">Case file / F-150 King Ranch</div>
         </div>
         <div className="order-1 lg:order-2">
@@ -320,7 +320,7 @@ function FinalCta({ onQuote }: { onQuote: () => void }) {
 }
 
 function Footer() {
-  return <footer className="bg-[#102437] px-5 py-10 text-white sm:px-8 lg:px-12"><div className="mx-auto flex max-w-[1380px] flex-col justify-between gap-10 sm:flex-row sm:items-end"><div><div className="flex items-center gap-3"><img src="/assets/a1-logo.jpeg" alt="A1 Auto Beauty" className="h-12 w-12 rounded-full object-cover" /><span className="font-display text-2xl font-bold uppercase tracking-[.08em]">A1AutoBeauty</span></div><p className="mt-5 max-w-[290px] text-sm leading-6 text-white/50">Mobile detailing for the particular. Omaha, Papillion, Bellevue, Elkhorn, Gretna and Council Bluffs.</p></div><div className="flex flex-col items-start gap-5 sm:items-end"><div className="flex flex-wrap gap-x-6 gap-y-3"><a href={phoneUrl} className="flex items-center gap-2 text-sm font-bold hover:text-[#f5a623]" data-testid="link-footer-call"><Phone size={15} /> (XXX) XXX-XXXX</a><InstagramLink /></div><div className="font-mono-brand text-[9px] uppercase tracking-[.13em] text-white/35">© 2024 A1AutoBeauty / Omaha, Nebraska</div></div></div></footer>;
+  return <footer className="bg-[#102437] px-5 py-10 text-white sm:px-8 lg:px-12"><div className="mx-auto flex max-w-[1380px] flex-col justify-between gap-10 sm:flex-row sm:items-end"><div><div className="flex items-center gap-3"><img src={`${import.meta.env.BASE_URL}assets/a1-logo.jpeg`} alt="A1 Auto Beauty" className="h-12 w-12 rounded-full object-cover" /><span className="font-display text-2xl font-bold uppercase tracking-[.08em]">A1AutoBeauty</span></div><p className="mt-5 max-w-[290px] text-sm leading-6 text-white/50">Mobile detailing for the particular. Omaha, Papillion, Bellevue, Elkhorn, Gretna and Council Bluffs.</p></div><div className="flex flex-col items-start gap-5 sm:items-end"><div className="flex flex-wrap gap-x-6 gap-y-3"><a href={phoneUrl} className="flex items-center gap-2 text-sm font-bold hover:text-[#f5a623]" data-testid="link-footer-call"><Phone size={15} /> (XXX) XXX-XXXX</a><InstagramLink /></div><div className="font-mono-brand text-[9px] uppercase tracking-[.13em] text-white/35">© 2024 A1AutoBeauty / Omaha, Nebraska</div></div></div></footer>;
 }
 
 function Home() {
